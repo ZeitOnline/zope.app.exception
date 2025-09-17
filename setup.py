@@ -20,7 +20,6 @@
 """
 import os
 
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -29,7 +28,7 @@ def read(*rnames):
         return f.read()
 
 
-version = '5.1.dev0'
+version = '5.1+importlib'
 
 tests_require = [
     'webtest',
@@ -88,16 +87,12 @@ setup(name='zope.app.exception',
       ],
       url='http://pypi.python.org/pypi/zope.app.exception',
       license='ZPL 2.1',
-      packages=find_packages('src'),
-      package_dir={'': 'src'},
-      namespace_packages=['zope', 'zope.app'],
       python_requires='>=3.7',
       extras_require={
           'test': tests_require,
       },
       tests_require=tests_require,
       install_requires=[
-          'setuptools',
           'zope.interface',
           'zope.publisher >= 3.12',
           'zope.authentication',
